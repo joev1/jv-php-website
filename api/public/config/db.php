@@ -1,0 +1,18 @@
+<?php
+session_start();
+
+$dsn = 'mysql:host=db;dbname=sys';
+$psw = 'react563';
+
+try {
+    $pdo = new PDO($dsn, root, $psw);
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//    echo "Connection successfully";
+
+}
+
+catch (PDOException $e) {
+    echo "Connection failed" . $e->getMessage();
+}
