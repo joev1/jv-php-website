@@ -6,7 +6,6 @@ services:
           - "80:80"
         environment:
           MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-        command: php -S 0.0.0.0:80 -t public
         volumes:
           - ./api:/app
         depends_on:

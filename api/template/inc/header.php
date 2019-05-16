@@ -18,7 +18,7 @@
                             <a id="aHead" href="#">Blog</a>
                         </li>
                         <li>
-                            <a id="aHead" href="../contact.php">Contact</a>
+                            <a id="aHead" href="/contact">Contact</a>
                         </li>
                     </ul>
                 </nav>

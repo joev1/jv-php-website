@@ -1,6 +1,5 @@
 <?php
-include_once '../public/inc/header.php';
-include 'config/db.php';
+include_once 'inc/header.php';
 $message="<pre>$msg</pre>"
 ?>
     <body id="mainBackground">
@@ -26,4 +25,4 @@ $message="<pre>$msg</pre>"
     </div>
     </body>
 <?php
-include_once  '../public/inc/footer.php';
+include_once  'inc/footer.php';

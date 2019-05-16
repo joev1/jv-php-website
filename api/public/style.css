@@ -142,13 +142,10 @@ body {
 
 .otherP {
     float: left;
-
 }
 
 .gitH {
     float: right;
-
-
 }
 
 
@@ -199,16 +196,6 @@ form#contactForm {
     padding: 0.5rem 1rem 0.5rem 1rem;
     border: 1px solid #35a6dc;
     box-shadow: 0 0 1px 0 #35a6dc, 0 0 1px 0 #35a6dc;
-    /*padding: 10px 20px 10px 20px;*/
-    /*text-decoration: none;*/
-    /*border: none;*/
-    /*color: white;*/
-    /*text-align: center;*/
-    /*display: inline-block;*/
-    /*font-size: 0.8rem;*/
-    /*margin: 3rem 1rem 1rem 1rem;*/
-    /*cursor: pointer;*/
-    /*width: 16rem;*/
 }
 
 
@@ -318,12 +305,10 @@ a#aHead :focus {
 .heroContact {
     text-align: center;
     top: 4rem;
-    /*text-shadow: 2px 0 2px darkcyan;*/
 }
 
 .hero {
     text-align: center;
-    /*text-shadow: 2px 0 2px darkcyan;*/
 }
 
 .hero h1 {

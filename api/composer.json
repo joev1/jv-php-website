@@ -1,0 +1,15 @@
+{
+    "name": "dane/jv",
+    "authors": [
+        {
+            "name": "joev",
+            "email": "joe.veror@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dane\\JV\\": "src"
+        }
+    }
+}
