@@ -1,4 +1,3 @@
-.env
 #todo remove me at global ignore
 .idea
 db/*
