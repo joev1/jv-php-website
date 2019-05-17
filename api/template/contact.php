@@ -2,38 +2,49 @@
 include_once 'inc/header.php';
 require_once '../config/db.php';
 
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
+$msg = "";
 
-    $sql = "INSERT INTO sys.ContactForm (name, email, phone, subject, message)
-            VALUES (:name, :email, :phone, :subject, :message)";
+    if(filter_has_var(INPUT_POST, 'submit')){
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $phone = htmlspecialchars($_POST['phone']);
+        $subject = htmlspecialchars($_POST['subject']);
+        $message = htmlspecialchars($_POST['message']);
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':name', $name);
-    $stmt->bindValue(':email', $email);
-    $stmt->bindValue(':phone', $phone);
-    $stmt->bindValue(':subject', $subject);
-    $stmt->bindValue(':message', $message);
+        if(!empty($name) && !empty($email) && !empty($subject) && !empty($message)){
+             if(filter_var($email,FILTER_VALIDATE_EMAIL) === false){
+                $msg = "Please use a valid email";
+             } else {
+                $sql = "INSERT INTO sys.ContactForm (name, email, phone, subject, message)
+                VALUES (:name, :email, :phone, :subject, :message)";
 
-    $stmt->execute();
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindValue(':name', $name);
+                $stmt->bindValue(':email', $email);
+                $stmt->bindValue(':phone', $phone);
+                $stmt->bindValue(':subject', $subject);
+                $stmt->bindValue(':message', $message);
 
-    echo "<script>alert('Message send')</script>";
-}
+                $stmt->execute();
+             }
+        } else {
+            $msg = "Please fill all fields with: '*'";
+        }
 
+    }
 ?>
     <body id="mainBackground">
     <div class="midWrapper">
         <div class="hero">
                 <form id="contactForm" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-                    <div><input type="text" name="name" placeholder=" Your Name" /></div>
-                    <div><input type="email" name="email" placeholder=" Your E-mail Address" /></div>
-                    <div><input type="tel" name="phone" placeholder=" Your Phone Number"/></div>
-                    <div><input type="text" name="subject" placeholder=" Subject"/></div>
-                    <div><textarea name="message" rows="8" placeholder=" Your Message"></textarea></></div>
+                    <div><input type="text" name="name" placeholder=" Your Name*" /></div>
+                    <div><input type="email" name="email" placeholder="E-mail Address*" /></div>
+                    <div><input type="tel" name="phone" placeholder="Phone Number (can be blank)"/></div>
+                    <div><input type="text" name="subject" placeholder=" Subject*"/></div>
+                    <div><textarea name="message" rows="8" placeholder=" Your Message*"></textarea></></div>
+                    <?php if($msg != ''): ?>
+                        <div id="divMsg"><?php echo $msg; ?></div>
+                    <?php endif; ?>
                     <div>
                         <input id="contactBtn" type="submit" name="submit" value="Submit">
                     </div>
