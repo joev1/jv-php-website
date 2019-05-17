@@ -5,6 +5,6 @@ class PageNotFound
 {
     public function __construct()
     {
-        echo 'Сраница не найдена';
+        echo 'Сраница не найдена 404';
     }
 }

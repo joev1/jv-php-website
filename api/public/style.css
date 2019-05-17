@@ -235,6 +235,26 @@ button#contactBtn {
 
 }
 
+input#contactBtn {
+    width: 5.5rem;
+    background: #35a6dc;
+    border-radius: 2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 1px solid #35a6dc;
+    box-shadow: 0 0 1px 0 #35a6dc, 0 0 1px 0 #35a6dc;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin: 1rem 1rem 1.6rem 1rem;
+    float: left;
+    left: 20%;
+    position: relative;
+
+}
+
 .container {
     width: 50%;
     max-width: 62rem;
