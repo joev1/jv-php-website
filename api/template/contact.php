@@ -41,7 +41,7 @@ $msg = "";
                     <div><input type="email" name="email" placeholder="E-mail Address*" /></div>
                     <div><input type="tel" name="phone" placeholder="Phone Number (can be blank)"/></div>
                     <div><input type="text" name="subject" placeholder=" Subject*"/></div>
-                    <div><textarea name="message" rows="8" placeholder=" Your Message*"></textarea></></div>
+                    <div><textarea name="message" rows="8" placeholder=" Your Message*"></textarea></div>
                     <?php if($msg != ''): ?>
                         <div id="divMsg"><?php echo $msg; ?></div>
                     <?php endif; ?>
