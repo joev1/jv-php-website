@@ -4,4 +4,7 @@ RUN apt update && \
     apt upgrade -y && \
     apt install -y php-cli php-mysql curl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-ENTRYPOINT ./entrypoint.sh
+COPY entrypoint.sh /usr/local/bin
+RUN chmod 777 /usr/local/bin/entrypoint.sh \
+    && ln -s /usr/local/bin/entrypoint.sh /
+ENTRYPOINT ["entrypoint.sh"]

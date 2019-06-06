@@ -3,7 +3,7 @@ services:
     api:
         build: ./api
         ports:
-          - "80:80"
+          - "81:80"
         environment:
           MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         volumes:
@@ -12,10 +12,10 @@ services:
           - db
 
     db:
-        image: mysql:5.7
+        image: mysql
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         ports:
-            - "3306:3306"
+            - "3307:3306"
         volumes:
             - ./db:/var/lib/mysql
