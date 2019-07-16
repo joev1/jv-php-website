@@ -1,9 +1,9 @@
 <?php
-require_once '../config/db.php';
+include '../config/db.php';
 
 $msg = "";
 
-if(filter_has_var(INPUT_POST, 'submit')){
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
@@ -14,7 +14,7 @@ if(filter_has_var(INPUT_POST, 'submit')){
         if(filter_var($email,FILTER_VALIDATE_EMAIL) === false){
             $msg = "Please use a valid email";
         } else {
-            $sql = "INSERT INTO sys.ContactForm (name, email, phone, subject, message)
+            $sql = "INSERT INTO jv.new_table (name, email, phone, subject, message)
                 VALUES (:name, :email, :phone, :subject, :message)";
 
             $stmt = $pdo->prepare($sql);
@@ -25,9 +25,11 @@ if(filter_has_var(INPUT_POST, 'submit')){
             $stmt->bindValue(':message', $message);
 
             $stmt->execute();
+            header('Location:'.'/success');
         }
     } else {
         $msg = "Please fill all fields with: '*'";
     }
 
 }
+

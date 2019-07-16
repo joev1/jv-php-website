@@ -1,8 +1,6 @@
 <?php
-require_once  'inc/header.php';
+require_once 'inc/header.php';
 ?>
-
-<body id="mainBackground">
     <div class="midWrapper">
         <div class="hero">
             <h1>Web design & Web development</h1>
@@ -16,6 +14,5 @@ require_once  'inc/header.php';
             <div class="gitH"><a href="https://github.com/joev1/jv"><img src="img/github.png" alt="GitHub"></a></div>
         </div>
     </div>
-</body>
 <?php
-require_once  'inc/footer.php';
+require_once 'inc/footer.php';
