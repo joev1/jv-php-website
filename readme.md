@@ -6,7 +6,7 @@ My website with contact form (MySQL, API PDO)  in Docker
 
 # How to 
 
-Rename '.example.env' to '.env' and set it up, edit contact form and API PDO as you desire.
+Rename '.env.example' to '.env' and set it up, edit contact form and API PDO as you desire.
 
 Start services: 'docker compose up -d' 
 
