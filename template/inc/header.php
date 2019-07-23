@@ -11,7 +11,7 @@
 <header>
     <div class="clearFix">
         <div class="menu">
-            <a id="aHead" class="nav-logo" href="../index.php"><img src="../img/logomini.png" alt="JV"></a>
+            <a id="aHead" class="nav-logo" href="/"><img src="../img/logomini.webp" alt="JV"></a>
             <nav class="mainNav clearFix">
                 <ul>
                     <li>

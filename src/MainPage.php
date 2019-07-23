@@ -5,6 +5,6 @@ class MainPage
 {
     public function __construct()
     {
-        require '../template/index.php';
+        require '../template/main.php';
     }
 }
